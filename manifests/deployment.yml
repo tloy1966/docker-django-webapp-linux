@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tloydockerdjangowebapplinux 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tloydockerdjangowebapplinux
+  template:
+    metadata:
+      labels:
+        app: tloydockerdjangowebapplinux 
+    spec:
+      containers:
+        - name: tloydockerdjangowebapplinux 
+          image: readinessregistry.azurecr.io/tloydockerdjangowebapplinux
+          ports:
+          - containerPort: 2222
